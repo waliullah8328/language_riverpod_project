@@ -18,5 +18,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settings => '설정';
 
   @override
-  String get profile => '윤곽';
+  String get report => '보고서';
+
+  @override
+  String get history => '역사';
+
+  @override
+  String get account => '계정';
 }

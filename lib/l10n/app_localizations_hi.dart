@@ -18,5 +18,11 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settings => 'सेटिंग्स';
 
   @override
-  String get profile => 'प्रोफ़ाइल';
+  String get report => 'प्रतिवेदन';
+
+  @override
+  String get history => 'इतिहास';
+
+  @override
+  String get account => 'खाता';
 }
