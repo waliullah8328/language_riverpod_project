@@ -15,6 +15,10 @@ class IconPath{
   static const  String historyActiveIcon ='$_basePath/history_active_icon.svg';
   static const  String accountActiveIcon ='$_basePath/account_active_icon.svg';
 
+  // Account Screen Icon
+  static const  String appAppearanceIcon ='$_basePath/app_appearance_icon.svg';
+  static const  String rightArrowIcon ='$_basePath/right_arrow_icon.svg';
+
 
 
 

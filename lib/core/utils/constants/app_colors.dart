@@ -55,4 +55,8 @@ class AppColors {
   static const Color textFormFieldBorder = Color(0xFFE0E0E0);
 
   static const Color containerColor = Color(0xFF747474);
+
+// ScaFold BackGround Color
+  static const Color scaFoldBackGroudLightColor = Color(0xFFF5F5F5);
+  static const Color scaFoldBackGroudDarkColor = Color(0xFF212121);
 }
