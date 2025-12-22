@@ -2,9 +2,9 @@
 import 'package:flutter_riverpod/legacy.dart';
 
 enum Language{
-  english(flag: '',name: 'english',code: 'en'),
-  hindi(flag: '',name: 'hindi',code: 'hi'),
-  korea(flag: '',name: 'korea',code: 'ko');
+  english(flag: '🇺🇸', name: 'English', code: 'en'),
+  hindi(flag: '🇮🇳', name: 'Hindi', code: 'hi'),
+  korea(flag: '🇰🇷', name: 'Korea', code: 'ko');
 
 
   const Language({required this.flag, required this.name,required this.code});
