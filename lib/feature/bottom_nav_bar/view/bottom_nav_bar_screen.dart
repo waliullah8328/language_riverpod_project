@@ -3,9 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:language_riverpod_project/core/utils/constants/app_sizer.dart';
+import 'package:language_riverpod_project/core/utils/constants/icon_path.dart';
 import 'package:language_riverpod_project/feature/home_page/home_page.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../core/utils/constants/app_colors.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../view_model/bottom_nav_bar_view_model.dart';
@@ -23,9 +24,11 @@ class BottomNavScreen extends ConsumerWidget {
 
 
     final List<Widget> pages = [
-      const HomePage(),
-      const HomePage(),
-      const HomePage(),
+      const AccountScreen(),
+      const AccountScreen(),
+      const AccountScreen(),
+      const AccountScreen(),
+
 
     ];
 
@@ -48,35 +51,34 @@ class BottomNavScreen extends ConsumerWidget {
 
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home,color: currentIndex == 0?  AppColors.primary:AppColors.textPrimary,),
+              icon: SvgPicture.asset(currentIndex == 0?IconPath.homeActiveIcon:IconPath.homeInActiveIcon,height: 18.h,width: 18.w,),
+
               label: AppLocalizations.of(context)!.home,
 
 
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings,color: currentIndex == 1? AppColors.primary:AppColors.textPrimary,),
-              label: AppLocalizations.of(context)!.settings,
+              icon: SvgPicture.asset(currentIndex == 1?IconPath.reportActiveIcon:IconPath.reportInActiveIcon,height: 18.h,width: 18.w,),
+
+              label: AppLocalizations.of(context)!.report,
 
 
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person,color: currentIndex == 2? AppColors.primary:AppColors.textPrimary,),
-              label: AppLocalizations.of(context)!.profile,
+              icon: SvgPicture.asset(currentIndex == 2?IconPath.historyActiveIcon:IconPath.historyInActiveIcon,height: 18.h,width: 18.w,),
+
+              label: AppLocalizations.of(context)!.history,
 
 
             ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.person,color: currentIndex == 3? AppColors.primary:AppColors.textPrimary,),
-            //   label: AppLocalizations.of(context)!.home,
-            //
-            //
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.settings,color: currentIndex == 4? AppColors.primary:AppColors.textPrimary,),
-            //   label: AppLocalizations.of(context)!.home,
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(currentIndex == 3?IconPath.accountActiveIcon:IconPath.accountInActiveIcon,height: 18.h,width: 18.w,),
+
+              label: AppLocalizations.of(context)!.account,
 
 
-            //),
+            ),
+
           ],
         ),
       ),

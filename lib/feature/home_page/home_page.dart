@@ -4,8 +4,8 @@ import 'package:language_riverpod_project/l10n/app_localizations.dart';
 
 import '../widget/language_pop_up_menu.dart';
 
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+class AccountScreen extends ConsumerWidget {
+  const AccountScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
