@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:language_riverpod_project/core/utils/constants/app_sizer.dart';
+import 'package:language_riverpod_project/feature/route/routes_name.dart';
 import '../../../../core/common/widgets/custom_text.dart';
 import '../../../../core/common/widgets/new_custon_widgets/custom_check_box_widget.dart';
 import '../../../../core/common/widgets/new_custon_widgets/custom_primary_button.dart';
@@ -79,7 +81,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             size: 25,
             weight: 1.w,
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.go(RouteNames.signUpScreen),
         ),
       ),
       body: SingleChildScrollView(

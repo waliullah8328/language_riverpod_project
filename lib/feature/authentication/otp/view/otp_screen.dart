@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:language_riverpod_project/core/utils/constants/app_sizer.dart';
+import 'package:language_riverpod_project/feature/route/routes_name.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../core/common/widgets/custom_text.dart';
 import '../../../../../core/utils/constants/app_colors.dart';
@@ -13,7 +15,9 @@ import '../view_model/verify_view_model.dart';
 
 
 class OtpScreen extends ConsumerWidget {
-  const OtpScreen({super.key});
+  const OtpScreen( {super.key,required this.email,});
+
+  final String email;
 
 
 
@@ -21,8 +25,7 @@ class OtpScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    final email = args?['email'] ?? '';
+
 
     final notifier = ref.read(otpNotifierProvider.notifier);
     final themeMode = ref.watch(themeModeProvider);
@@ -43,10 +46,10 @@ class OtpScreen extends ConsumerWidget {
 
       appBar: AppBar(
         title: Text("OTP",style: TextStyle(fontWeight: FontWeight.w600),),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back,size: 25,weight: 1.w,),
-          onPressed: () => Navigator.pop(context),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back,size: 25,weight: 1.w,),
+        //   onPressed: () => Navigator.pop(context),
+        // ),
       ),
       body: Column(
 
@@ -152,11 +155,14 @@ class OtpScreen extends ConsumerWidget {
             color:  const Color(0xffF5F5F5),
           ),
           Consumer(builder: (context, ref, child) {
+            final otp = ref.watch(otpNotifierProvider.select((s)=>s.otp));
 
             return Padding(
               padding:  EdgeInsets.only(left: 24.w,right: 24.w,bottom: 40.h,top: 24.h),
               child:CustomPrimaryButton(
                 title:"Verify",onPressed: () async {
+                  context.go("${RouteNames.resetPasswordScreen}/$email/$otp");
+                  debugPrint(email.toString());
 
 
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:language_riverpod_project/core/utils/constants/app_sizer.dart';
+import 'package:language_riverpod_project/feature/route/routes_name.dart';
 
 
 import '../../../../core/common/widgets/custom_text.dart';
@@ -225,7 +227,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                         // Navigator.pushNamed(context, RouteNames.loginScreen);
+                        context.push(RouteNames.loginScreen);
                         },
                         child: Text(
                           "Sign in",
@@ -300,12 +302,14 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 /// ✅ SIGN UP BUTTON
                 Consumer(
                   builder: (context, ref, _) {
+                    final email = ref.watch(signUpProvider.select((s)=>s.email));
 
 
                     return CustomPrimaryButton(
                       title:"Sign up",
                       onPressed: () async {
                         if (_signUpFormKey.currentState!.validate()) {
+                          context.push("${RouteNames.otpScreen}/$email");
 
                         }
                       },
