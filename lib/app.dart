@@ -10,6 +10,7 @@ import 'core/utils/theme/theme.dart';
 import 'core/utils/theme/theme_provider.dart';
 import 'feature/bottom_nav_bar/view/bottom_nav_bar_screen.dart';
 import 'feature/language/language.dart';
+import 'feature/route/routes.dart';
 import 'l10n/app_localizations.dart';
 
 class PlatformUtils {
@@ -57,14 +58,15 @@ class _MyAppState extends ConsumerState<MyApp> {
 
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
+          routerConfig: Routes.goRouter,
           title: 'Flutter Demo',
 
           theme: _getLightTheme(),
           darkTheme: _getDarkTheme(),
           themeMode: themeMode,
-          home: BottomNavScreen (),
+          //home: BottomNavScreen (),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           locale: Locale(language.code),

@@ -19,6 +19,12 @@ class IconPath{
   static const  String appAppearanceIcon ='$_basePath/app_appearance_icon.svg';
   static const  String rightArrowIcon ='$_basePath/right_arrow_icon.svg';
 
+  // Sign Up Screen Icon
+  static const  String emailIcon ='$_basePath/email_icon.svg';
+  static const  String passwordIcon ='$_basePath/password_icon.svg';
+  static const  String googleSignInIcon ='$_basePath/google_sign_in_icon.svg';
+  static const  String appleSignInIcon ='$_basePath/apple_sign_in.svg';
+
 
 
 
