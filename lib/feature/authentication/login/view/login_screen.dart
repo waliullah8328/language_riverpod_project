@@ -81,7 +81,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             size: 25,
             weight: 1.w,
           ),
-          onPressed: () => context.go(RouteNames.signUpScreen),
+          onPressed: () {
+            context.pop();
+          },
         ),
       ),
       body: SingleChildScrollView(
@@ -294,6 +296,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       title:"Sign in",
                       onPressed: () async {
                         if (!_loginFormKey.currentState!.validate()) return;
+                        context.go(RouteNames.navBarScreen);
 
                       },
                     );
